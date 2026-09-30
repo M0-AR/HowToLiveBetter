@@ -43,6 +43,7 @@ HTML_COMMENT = re.compile(r"<!--.*?-->", re.DOTALL)
 INLINE_CODE = re.compile(r"`[^`\n]*`")
 PATHLIKE_LINK = re.compile(r"\[[^\]\n]*[/\\][^\]\n]*\.(?:md|png|html)\]\([^)]*\)")
 LINK_TARGET = re.compile(r"\]\([^)]*\)")
+STATUS_LINE = re.compile(r"^>\s*ترجمة غير رسمية للملف\s+book/")
 BOOK_TITLE = re.compile(r"《[^》]*》")
 GLOSS_PAREN = re.compile(r"[\u4e00-\u9fff][\u4e00-\u9fff/0-9]{0,20}\s*[（(][^()（）]*[）)]")
 TERM_THEN_TITLE = re.compile(r"[\"«“][^\"»”]*[\"»”]\s*《")
@@ -183,7 +184,7 @@ def gate_cjk_leaks(issues):
         for path in sorted(glob.glob(os.path.join(ROOT, d, "*.md"))):
             rel = os.path.relpath(path, ROOT)
             for ln, line in enumerate(open(path, encoding="utf-8").read().splitlines(), 1):
-                if SRC_LINE.match(line) or SRC_BULLET.match(line):
+                if SRC_LINE.match(line) or SRC_BULLET.match(line) or STATUS_LINE.match(line):
                     continue
                 residue = strip_legal_cjk(line)
                 m = CJK.search(residue)

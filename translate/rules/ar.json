@@ -1,0 +1,49 @@
+{
+  "_comment": "AR language pack (Modern Standard Arabic, RTL). Mirrors en.json structure. Numbers stay Western digits; scale words folded into digits like ES.",
+  "labels": {
+    "cn": [
+      "成本",
+      "说人话",
+      "收益",
+      "证据等级",
+      "备注"
+    ],
+    "ar": [
+      "التكلفة",
+      "بعبارة بسيطة",
+      "الفائدة",
+      "مستوى الدليل",
+      "ملاحظات"
+    ]
+  },
+  "source_label": "المصادر",
+  "evidence_grade_label": "مستوى الدليل",
+  "banned_calques": [],
+  "style_markers": [
+    {
+      "pattern": "\\bمن أجل\\b",
+      "label": "min-ajl-filler",
+      "note": "filler opener, prefer direct style"
+    },
+    {
+      "pattern": "!!!+",
+      "label": "exclamation",
+      "note": "tone rule: no exclamation marks"
+    }
+  ],
+  "whitelist_zones": [
+    "- التكلفة:",
+    "- بعبارة بسيطة:",
+    "- الفائدة:",
+    "- ملاحظات:",
+    "- المصادر:",
+    "- مستوى الدليل:",
+    "<!-- 成本标签"
+  ],
+  "soft_calques": [
+    "cohort",
+    "exposure",
+    "quartile",
+    "confound"
+  ]
+}

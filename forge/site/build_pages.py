@@ -233,6 +233,8 @@ def apply_lang_head(html: str, src_for_i18n: str, lang_meta: dict, path_suffix: 
     og = og_image_url(lang)
 
     html = HTML_LANG_RE.sub(rf"\1{html_lang}\2", html, count=1)
+    if lang in ("ar",):
+        html = re.sub(r"<html([^>]*?)>", r"<html\1 dir=\"rtl\">", html, count=1)
     html = TITLE_RE.sub(f"<title>{esc_attr(title)}</title>", html, count=1)
     html = META_NAME_RE["description"].sub(
         f'<meta name="description" content="{esc_attr(meta_desc)}">', html, count=1

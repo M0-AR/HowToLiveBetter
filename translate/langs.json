@@ -54,6 +54,17 @@
       "inLanguage": "pt-BR",
       "shortLabel": "PT",
       "menuLabel": "Português"
+    },
+    {
+      "code": "ar",
+      "primary": false,
+      "contentRoot": "book/ar",
+      "readme": "README.ar.md",
+      "htmlLang": "ar",
+      "ogLocale": "ar_SA",
+      "inLanguage": "ar",
+      "shortLabel": "ع",
+      "menuLabel": "العربية"
     }
   ]
 }

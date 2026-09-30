@@ -22,6 +22,7 @@ _LANG_NAMES = {
     "ru": "Russian",
     "en": "English",
     "es": "Spanish",
+    "ar": "Arabic",
     "pt": "Brazilian Portuguese",
 }
 

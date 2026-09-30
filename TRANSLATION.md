@@ -204,3 +204,68 @@ China-context rules above are identical; field labels are in the table above.
 Applies to `book/pt/` and `README.pt.md` (pt-BR). Field labels in the table above
 (`Custo` / `Em linguagem simples` / `Benefício` / `Nível de evidência` / `Fontes` / `Notas`).
 Same number rules as ES. Chapters **01–34** under `book/pt/`; slugs as in TOC.
+
+## Arabic (AR) — conventions
+
+Applies to `book/ar/` and `README.ar.md`. Status, keep-untouched, tone and
+China-context rules above are identical; field labels differ.
+Variant: Modern Standard Arabic (MSA, الفصحى), RTL (`dir="rtl"` on
+`site/ar/index.html`, emitted by build_pages.py).
+
+### AR field labels (verify.py / assemble.py / index.html parser)
+
+- 成本 → `- التكلفة: `
+- 说人话 → `- بعبارة بسيطة: `
+- 收益 → `- الفائدة: `
+- 证据等级 → `- مستوى الدليل: A/B/C` (letters stay Latin A/B/C)
+- 来源 → `- المصادر: ` (injected byte-for-byte, same as ES)
+- 备注 → `- ملاحظات: `
+- Dispute marker in ملاحظات: starts with `متنازع عليه` (web UI badge,
+  parser regex covers `متنازع`)
+- TODO marker: keep the literal `TODO` plus Arabic, e.g.
+  `TODO (بحاجة إلى تحقق: …)` (web UI badge via existing TODO regex)
+
+### AR file naming
+
+`NN-<English-slug>.md`, ASCII slugs mirrored from `book/en/` (same two-digit
+prefix), e.g. `book/ar/01-Do-Not-Die-Early.md`. Arabic-script filenames are
+avoided on purpose (RTL filename + tooling issues); Arabic titles live inside
+the files. Status line + back-link at the top of every file:
+
+```
+[← العودة إلى الفهرس العام](../../README.ar.md)
+
+> ترجمة غير رسمية للملف book/01-不要早死.md. عند وجود أي اختلاف، يُعتد بالنص الصيني الأصلي.
+```
+
+Back-link in every `book/ar/` file: `[← العودة إلى الفهرس العام](../../README.ar.md)`.
+
+### AR numbers (verify gate uses the default EN-style path)
+
+- Western digits only (0-9) — never Arabic-Indic digits (٠١٢٣٤٥٦٧٨٩),
+  otherwise the verify numbers gate fails.
+- Copy numeric tokens byte-identical from the EN source: `248,099`, `17.4`,
+  `95% CI 0.50–0.68`, `100–300 yuan`. Yuan stays `yuan` (يوان gloss on first
+  use per file allowed: `يوان (元 — العملة الصينية)`).
+- 万 → ×10 000, 亿 → ×10⁸ (already folded in the EN source — translate from
+  `book/en/`, keep the folded digits).
+
+### AR style
+
+- MSA, restrained, no exclamation marks, verb-first item titles.
+- The `بعبارة بسيطة` line is colloquial MSA — no epidemiology jargon.
+- Chinese legal/medical identifiers keep hanzi + short Arabic gloss on first
+  use per chapter: `《民法典》 (القانون المدني الصيني)`.
+- Emergency numbers keep Chinese values in place; Arab-country equivalents
+  only as a ملاحظات gloss, clearly marked.
+- Sources are never translated (byte-for-byte from the original).
+- Law-heavy chapters (8, 9, 11, 15, 19, 25, 26, 31) get one extra line under
+  the heading: «يستشهد هذا الفصل بقوانين ومؤسسات صينية؛ وهو مادة مرجعية
+  لغير المقيمين في الصين وليس قانونًا واجب التطبيق عليهم.»
+
+### AR rollout status
+
+- Infrastructure: rules/ar.json, langs.json `ar`, I18N.ar block, parser labels,
+  dispute regex, RTL build — landed in scaffold commit.
+- Waves: 6 chapter waves (01–06, 07–12, 13–18, 19–24, 25–29, 30–34) +
+  README.ar.md, via parallel subagents translating from `book/en/`.

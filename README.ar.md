@@ -1,6 +1,6 @@
 > ترجمة عربية غير رسمية لملف README.md الإنجليزي. عند وجود أي اختلاف، يُعتد بالأصل الصيني (README.zh.md).
 
-![HowToLiveBetter — وقت وجهد ونفقة أقل لحياة وحرية ومال أكثر](site/assets/og/en.png)
+![HowToLiveBetter — وقت وجهد ونفقة أقل لحياة وحرية ومال أكثر](site/assets/og/ar.png)
 
 # HowToLiveBetter: دليل الحياة الأعلى قيمة
 
@@ -14,15 +14,16 @@
 ![المصادر الأولية](https://img.shields.io/badge/Primary%20sources-1341%20links-565a5f?style=flat-square)
 ![الترخيص](https://img.shields.io/badge/License-Unlicense-565a5f?style=flat-square)
 
-**[افتح صفحة البحث عبر الإنترنت](https://dlgrv.github.io/HowToLiveBetter/ar/)** · [جدول المحتويات](#table-of-contents) · [المصطلحات](#reading-the-numbers-glossary) · [سجلات التحقق](docs/research/核实记录/) · [هل الزواج يستحق (قراءة مطولة)](docs/research/ar/Is-Marriage-Worth-It.md) · [عدة الطوارئ المنزلية (قراءة مطولة)](docs/research/ar/Home-Emergency-Kit.md) · [هل تتوقف لمساعدة غريب (قراءة مطولة)](docs/research/ar/Should-You-Stop-To-Help-A-Stranger.md) · [ما التراخيص التي تحتاجها المنصة (قراءة مطولة)](docs/research/ar/What-Licenses-A-Platform-Needs.md)
+**[افتح صفحة البحث عبر الإنترنت](https://dlgrv.github.io/HowToLiveBetter/ar/)** | [جدول المحتويات](#table-of-contents) | [المصطلحات](#reading-the-numbers-glossary) | [سجلات التحقق](docs/research/核实记录/) | [هل الزواج يستحق (قراءة مطولة)](docs/research/ar/Is-Marriage-Worth-It.md) | [عدة الطوارئ المنزلية (قراءة مطولة)](docs/research/ar/Home-Emergency-Kit.md) | [هل تتوقف لمساعدة غريب (قراءة مطولة)](docs/research/ar/Should-You-Stop-To-Help-A-Stranger.md) | [ما التراخيص التي تحتاجها المنصة (قراءة مطولة)](docs/research/ar/What-Licenses-A-Platform-Needs.md)
 
-اللغات:
-
-- [🇬🇧 English](README.md) - [read on the site](https://dlgrv.github.io/HowToLiveBetter/en/)
-- [🇷🇺 Русский](README.ru.md) - [читать на сайте](https://dlgrv.github.io/HowToLiveBetter/ru/)
-- [🇨🇳 中文](README.zh.md) - [在网站阅读](https://dlgrv.github.io/HowToLiveBetter/zh/)
-- [🇪🇸 Español](README.es.md) - [leer en el sitio](https://dlgrv.github.io/HowToLiveBetter/es/)
-- [🇸🇦 العربية](README.ar.md) - [اقرأ على الموقع](https://dlgrv.github.io/HowToLiveBetter/ar/)
+| اللغة | الموقع | README | PDF | EPUB |
+| --- | --- | --- | --- | --- |
+| 🇸🇦 العربية | [اقرأ على الموقع](https://dlgrv.github.io/HowToLiveBetter/ar/) | [README.ar.md](README.ar.md) | — | — |
+| 🇬🇧 English | [Read on the site](https://dlgrv.github.io/HowToLiveBetter/en/) | [README.md](README.md) | [Download PDF](https://github.com/dlgrv/HowToLiveBetter/releases/download/ebooks-latest/HowToLiveBetter-en.pdf) | [Download EPUB](https://github.com/dlgrv/HowToLiveBetter/releases/download/ebooks-latest/HowToLiveBetter-en.epub) |
+| 🇷🇺 Русский | [Читать на сайте](https://dlgrv.github.io/HowToLiveBetter/ru/) | [README.ru.md](README.ru.md) | [Скачать PDF](https://github.com/dlgrv/HowToLiveBetter/releases/download/ebooks-latest/HowToLiveBetter-ru.pdf) | [Скачать EPUB](https://github.com/dlgrv/HowToLiveBetter/releases/download/ebooks-latest/HowToLiveBetter-ru.epub) |
+| 🇨🇳 中文 | [在网站阅读](https://dlgrv.github.io/HowToLiveBetter/zh/) | [README.zh.md](README.zh.md) | [下载 PDF](https://github.com/dlgrv/HowToLiveBetter/releases/download/ebooks-latest/HowToLiveBetter-zh.pdf) | [下载 EPUB](https://github.com/dlgrv/HowToLiveBetter/releases/download/ebooks-latest/HowToLiveBetter-zh.epub) |
+| 🇪🇸 Español | [Leer en el sitio](https://dlgrv.github.io/HowToLiveBetter/es/) | [README.es.md](README.es.md) | [Descargar PDF](https://github.com/dlgrv/HowToLiveBetter/releases/download/ebooks-latest/HowToLiveBetter-es.pdf) | [Descargar EPUB](https://github.com/dlgrv/HowToLiveBetter/releases/download/ebooks-latest/HowToLiveBetter-es.epub) |
+| 🇧🇷 Português | [Ler no site](https://dlgrv.github.io/HowToLiveBetter/pt/) | [README.pt.md](README.pt.md) | [Baixar PDF](https://github.com/dlgrv/HowToLiveBetter/releases/download/ebooks-latest/HowToLiveBetter-pt.pdf) | [Baixar EPUB](https://github.com/dlgrv/HowToLiveBetter/releases/download/ebooks-latest/HowToLiveBetter-pt.epub) |
 
 ---
 

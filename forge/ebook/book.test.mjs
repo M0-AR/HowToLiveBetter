@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { ensureH1, fitTypstTableColumns, headingText, isChapterPath, localeFor, navLabel, prepareSection, promoteItemHeadings, read, readBook, requireRepoFile, stripBackLink } from './book.mjs';
+import { ensureH1, fitTypstTableColumns, headingText, isChapterPath, localeFor, loadLangs, navLabel, prepareSection, promoteItemHeadings, read, readBook, requireRepoFile, stripBackLink, isRtl, EBOOK_IDS } from './book.mjs';
 
 const EXPECTED_CHAPTERS = 34;
 
@@ -94,4 +94,23 @@ test('ebook links are underlined and tables stay on the page', () => {
 test('missing chapter file fails', () => {
   assert.throws(() => requireRepoFile('book/99-missing.md'), /missing book\/99-missing\.md/);
   assert.throws(() => readBook('nope'), /unknown --lang/);
+});
+
+test('every locale has a unique ebook id and RTL is ar-only', () => {
+  const codes = loadLangs().map((row) => row.code);
+  for (const code of codes) {
+    assert.match(EBOOK_IDS[code] ?? '', /^urn:uuid:[0-9a-f-]+$/, code);
+  }
+  assert.equal(new Set(Object.values(EBOOK_IDS)).size, Object.keys(EBOOK_IDS).length);
+  assert.equal(isRtl('ar'), true);
+  for (const code of codes.filter((c) => c !== 'ar')) {
+    assert.equal(isRtl(code), false);
+  }
+});
+
+test('PDF template carries Arabic fonts and an RTL branch', () => {
+  const typ = read('forge/ebook/pdf/template.typ');
+  assert.match(typ, /"Amiri", "Noto Naskh Arabic"/);
+  assert.match(typ, /\$if\(rtl\)\$/);
+  assert.match(typ, /align\(start, it\)/);
 });

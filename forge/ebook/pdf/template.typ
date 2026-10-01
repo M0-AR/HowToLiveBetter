@@ -14,7 +14,7 @@ $-- Pandoc typst template. Body helpers follow `pandoc -D typst`. --$
     }
     out.join()
   }
-  align(left, it)
+  align(start, it)
 }
 
 #let horizontalRule = line(start: (25%, 0%), end: (75%, 0%))
@@ -27,7 +27,7 @@ $-- Pandoc typst template. Body helpers follow `pandoc -D typst`. --$
 
 #set document(title: "$booktitle$", author: "dlgrv")
 #set text(
-  font: ("Libertinus Serif", "Noto Serif CJK SC", "Noto Serif SC", "Source Han Serif SC", "Noto Sans CJK SC", "Microsoft YaHei", "SimSun"),
+  font: ("Libertinus Serif", "Amiri", "Noto Naskh Arabic", "Noto Serif CJK SC", "Noto Serif SC", "Source Han Serif SC", "Noto Sans CJK SC", "Microsoft YaHei", "SimSun"),
   size: 10.5pt,
   lang: "$ebooklang$",
   region: "$ebookregion$",
@@ -48,7 +48,11 @@ $-- Pandoc typst template. Body helpers follow `pandoc -D typst`. --$
   let seen = query(selector(heading.where(level: 1)).before(here()))
   if seen.len() == 0 { return }
   set text(8.5pt, fill: luma(120))
+  $if(rtl)$
+  grid(columns: (1fr, auto), align(right)[$booktitle$], align(left)[#seen.last().body])
+  $else$
   grid(columns: (1fr, auto), align(left)[$booktitle$], align(right)[#seen.last().body])
+  $endif$
   v(-7pt)
   line(length: 100%, stroke: 0.4pt + luma(215))
 }

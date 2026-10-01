@@ -102,6 +102,24 @@ const LOCALE = {
       body: 'Texto',
     },
   },
+  ar: {
+    markers: {
+      front: '## الأسئلة التي يحاول هذا الكتاب الإجابة عنها',
+      toc: '## جدول المحتويات',
+      book: '## الكتاب نفسه',
+    },
+    title: 'HowToLiveBetter',
+    typstLang: 'ar',
+    typstRegion: 'SA',
+    labels: {
+      front: 'مقدمة',
+      contents: 'دليل الأقسام',
+      about: 'عن هذه النسخة',
+      toc: 'المحتويات',
+      cover: 'الغلاف',
+      body: 'النص',
+    },
+  },
 };
 
 export const read = (rel) => readFileSync(resolveRepoFile(rel), 'utf8').replace(/\r\n/g, '\n');

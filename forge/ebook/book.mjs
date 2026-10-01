@@ -102,6 +102,24 @@ const LOCALE = {
       body: 'Texto',
     },
   },
+  ar: {
+    markers: {
+      front: '## الأسئلة التي يحاول هذا الكتاب الإجابة عنها',
+      toc: '## جدول المحتويات',
+      book: '## الكتاب نفسه',
+    },
+    title: 'HowToLiveBetter',
+    typstLang: 'ar',
+    typstRegion: 'SA',
+    labels: {
+      front: 'مقدمة',
+      contents: 'دليل الأقسام',
+      about: 'عن هذه النسخة',
+      toc: 'المحتويات',
+      cover: 'الغلاف',
+      body: 'النص',
+    },
+  },
 };
 
 export const read = (rel) => readFileSync(resolveRepoFile(rel), 'utf8').replace(/\r\n/g, '\n');
@@ -131,7 +149,7 @@ export function localeFor(code) {
 
 export function parseLang(argv = process.argv.slice(2)) {
   const i = argv.indexOf('--lang');
-  if (i < 0 || !argv[i + 1]) throw new Error('usage: --lang en|ru|zh|es|pt');
+  if (i < 0 || !argv[i + 1]) throw new Error('usage: --lang en|ru|zh|es|pt|ar');
   return argv[i + 1];
 }
 
@@ -254,7 +272,7 @@ export function isLongRead(rel, code) {
   if (rel.includes('核实记录')) return false;
   if (rel.startsWith('docs/pipeline/')) return false;
   if (code === 'zh') {
-    if (/^docs\/research\/(en|ru|es|pt)\//.test(rel)) return false;
+    if (/^docs\/research\/(en|ru|es|pt|ar)\//.test(rel)) return false;
     return /^docs\/[^/]+\.md$/.test(rel) || /^docs\/research\/[^/]+\.md$/.test(rel);
   }
   const prefix = `docs/research/${code}/`;

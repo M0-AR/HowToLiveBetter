@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render forge/og/{en,ru,es,zh,pt}.html from forge/og/_template.html.
+"""Render forge/og/{en,ru,es,zh,pt,ar}.html from forge/og/_template.html.
 
 Usage (from repo root):
   python3 forge/og/build_og_html.py
@@ -19,6 +19,7 @@ GRADE_A_N = "428"
 LINKS_N = "1531"
 
 LATIN_SERIF = 'Georgia,"Times New Roman","Noto Serif",serif'
+ARABIC_SERIF = '"Noto Sans Arabic",Georgia,"Times New Roman",serif'
 CJK_SERIF = (
     'Georgia,"Songti SC","STSong",SimSun,"PingFang SC","Microsoft YaHei",'
     '"Noto Serif SC","Source Han Serif SC","Times New Roman",serif'
@@ -89,6 +90,19 @@ LOCALES = {
         "grade_a_suffix": " 条",
         "links_label": "条原始文献链接",
         "filter_label": "可按性价比筛选",
+    },
+    "ar": {
+        "font_family": ARABIC_SERIF,
+        "h1_size": "52",
+        "brand": "HowToLiveBetter: دليل الحياة الأعلى قيمة",
+        "h1_line1": "وقت وجهد ونفقة أقل —",
+        "h1_line2": "حياة وحرية ومال أكثر",
+        "topics": "طول العمر | الإسعافات الأولية | المال | القانون | الأسرة | المهارات",
+        "tips_label": "نصيحة",
+        "grade_a_label": "أدلة من الدرجة A",
+        "grade_a_suffix": "",
+        "links_label": "رابطًا للمصادر الأولية",
+        "filter_label": "صفِّ حسب القيمة مقابل الجهد",
     },
 }
 

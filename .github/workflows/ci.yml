@@ -41,8 +41,17 @@ jobs:
           set -e
           git fetch --no-tags origin "${{ github.base_ref }}"
           base="origin/${{ github.base_ref }}"
+          # HEAD may be the synthetic PR merge commit (parents: base, pr-head).
+          # Gate the PR head's own first-parent history so upstream history
+          # imported by `-s ours` lineage merges (see AGENTS.md) is not gated.
+          tip=HEAD
+          if git rev-parse -q --verify HEAD^2 >/dev/null; then
+            if [ "$(git rev-parse HEAD^1)" = "$(git rev-parse "$base")" ]; then
+              tip=HEAD^2
+            fi
+          fi
           failed=0
-          for c in $(git rev-list --no-merges "$base"..HEAD); do
+          for c in $(git rev-list --no-merges --first-parent "$base".."$tip"); do
             echo "── checking $c ──"
             if ! git log -1 --format=%B "$c" | .venv/bin/python3 forge/ops/check_commit_msg.py --stdin; then
               failed=1
